@@ -25,7 +25,7 @@ const BIO = [
 const INFO_CARDS = [
   { icon: MapPin, text: 'Dubai, United Arab Emirates' },
   { icon: Briefcase, text: 'Open to Data Engineer and AI Engineer roles' },
-  { icon: Award, text: 'Ex-PwC and Protiviti' },
+  { icon: Award, text: 'Ex-PwC' },
   { icon: GraduationCap, text: 'NIT Allahabad Graduate' },
 ];
 
