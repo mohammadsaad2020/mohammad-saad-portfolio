@@ -15,11 +15,11 @@ import SectionTitle from './SectionTitle';
 import { fadeUp, staggerContainer, staggerItem, viewportOnce } from '../animations/variants';
 
 const LEAD =
-  'The short version: I build the cloud data infrastructure big GCC enterprises rely on every day — and I work hard to keep it boring. Boring means it just works, at 3am, at terabyte scale, without anyone noticing.';
+  'The short version: I build the cloud data infrastructure big GCC enterprises rely on every day, and I work hard to keep it boring. Boring means it just works, at 3am, at terabyte scale, without anyone noticing.';
 
 const BIO = [
-  'Four years across PwC and Protiviti. At PwC I moved multi-terabyte datasets into AWS, held them at 99.9% consistency, and cut processing time by 40%. At Protiviti I went broader — sizing up 30 applications for a leading GCC bank, defining 200+ KPIs, and trading legacy batch jobs for real-time, event-driven pipelines.',
-  "These days I build where solid data engineering meets applied AI — LLM pipelines, AI agents, and automation that sit on top of infrastructure that doesn't fall over.",
+  'Four years across PwC and Protiviti. At PwC I moved multi-terabyte datasets into AWS, held them at 99.9% consistency, and cut processing time by 40%. At Protiviti I went broader, sizing up 30 applications for a leading GCC bank, defining 200+ KPIs, and trading legacy batch jobs for real-time, event-driven pipelines.',
+  "These days I build where solid data engineering meets applied AI: LLM pipelines, AI agents, and automation that sit on top of infrastructure that doesn't fall over.",
 ];
 
 const INFO_CARDS = [

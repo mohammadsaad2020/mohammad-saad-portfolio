@@ -52,7 +52,7 @@ const projects = [
     category: 'Big Data and Distributed Computing',
     title: 'Large-scale Census Validation Engine on Hadoop',
     description:
-      'Engineered a distributed data processing application on Apache Hadoop to validate national identity enrolment data against census records at scale. The system ingests Aadhaar enrolment datasets across states and districts, processes them using MapReduce across a distributed cluster, and cross-references the outputs against census population data to surface statistical discrepancies — identifying potential duplicate records, unenrolled populations, and data integrity gaps at a granular geographic level. The project demonstrated the application of distributed computing principles to a real public sector data problem at significant volume.',
+      'Engineered a distributed data processing application on Apache Hadoop to validate national identity enrolment data against census records at scale. The system ingests Aadhaar enrolment datasets across states and districts, processes them using MapReduce across a distributed cluster, and cross-references the outputs against census population data to surface statistical discrepancies, identifying potential duplicate records, unenrolled populations, and data integrity gaps at a granular geographic level. The project demonstrated the application of distributed computing principles to a real public sector data problem at significant volume.',
     tech: [
       'Apache Hadoop',
       'MapReduce',

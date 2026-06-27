@@ -17,7 +17,7 @@ export const experience = [
         tags: ['DevOps', 'CI/CD'],
       },
       {
-        text: 'Built Dynatrace observability solution for metrics, events, logs, and traces with automated trace ID propagation — cutting manual log correlation time from hours to minutes',
+        text: 'Built Dynatrace observability solution for metrics, events, logs, and traces with automated trace ID propagation, cutting manual log correlation time from hours to minutes',
         tags: ['Dynatrace'],
       },
       {

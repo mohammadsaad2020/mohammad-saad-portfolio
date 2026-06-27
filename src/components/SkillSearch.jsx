@@ -61,9 +61,9 @@ export default function SkillSearch() {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search a skill — try “PySpark”, “Glue” or “SRE”"
+          placeholder="Search a skill, try “PySpark”, “Glue” or “SRE”"
           autoComplete="off"
-          className="w-full rounded-btn border border-default bg-bg-card/60 py-3 pl-12 pr-4 text-base text-text-primary placeholder:text-text-muted shadow-card backdrop-blur-sm transition-colors duration-300 ease-smooth focus:border-accent focus:outline-none focus:shadow-glow"
+          className="w-full rounded-btn border border-default bg-white py-3 pl-12 pr-4 text-base text-gray-800 placeholder:text-gray-500 shadow-card transition-colors duration-300 ease-smooth focus:border-accent focus:outline-none focus:shadow-glow"
         />
       </div>
 
@@ -87,7 +87,7 @@ export default function SkillSearch() {
               <>
                 <p className="flex items-center gap-2 text-sm font-semibold text-text-primary">
                   <Check className="h-4 w-4 shrink-0 text-success" aria-hidden="true" />
-                  Yes — hands-on experience with this
+                  Yes, hands-on experience with this
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {matches.map((match) => (
@@ -108,7 +108,7 @@ export default function SkillSearch() {
                 <X className="mt-0.5 h-4 w-4 shrink-0 text-warning" aria-hidden="true" />
                 <span>
                   No exact match for{' '}
-                  <span className="font-medium text-text-primary">“{query.trim()}”</span> — scroll
+                  <span className="font-medium text-text-primary">“{query.trim()}”</span>, scroll
                   down to the Skills section to browse everything I work with.
                 </span>
               </p>

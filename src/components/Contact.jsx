@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Phone } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import { staggerContainer, staggerItem, fadeUp, viewportOnce } from '../animations/variants';
 
 const EMAIL = 'mohammadsaadwork@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/mohammadsaad-';
+const PHONE = '+971 55 216 0874';
 
 const cardClasses =
   'flex min-h-[80px] flex-col items-center justify-center gap-2 rounded-card border border-default bg-bg-card p-8 text-center shadow-card transition-all duration-300 ease-smooth hover:-translate-y-1 hover:border-accent hover:shadow-glow';
@@ -35,8 +36,8 @@ export default function Contact() {
             className="mt-4 max-w-[600px] text-body-lg text-text-secondary"
           >
             If you are hiring for Data Engineering, AI Engineering, MLOps, or Cloud Data
-            Architecture roles in the UAE or GCC — or if you want to talk about building reliable
-            data infrastructure at enterprise scale — reach out directly.
+            Architecture roles in the UAE or GCC, or if you want to talk about building reliable
+            data infrastructure at enterprise scale, reach out directly.
           </motion.p>
         </div>
 
@@ -46,7 +47,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"
+          className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2"
         >
           <motion.a
             variants={staggerItem}
@@ -57,6 +58,17 @@ export default function Contact() {
             <Mail className="h-10 w-10 text-accent" aria-hidden="true" />
             <span className="font-display text-lg font-medium text-text-primary">Send an Email</span>
             <span className="text-sm text-text-muted">{EMAIL}</span>
+          </motion.a>
+
+          <motion.a
+            variants={staggerItem}
+            href={`tel:${PHONE.replace(/\s/g, '')}`}
+            className={cardClasses}
+            aria-label={`Call ${PHONE}`}
+          >
+            <Phone className="h-10 w-10 text-accent" aria-hidden="true" />
+            <span className="font-display text-lg font-medium text-text-primary">Call Me</span>
+            <span className="text-sm text-text-muted">{PHONE}</span>
           </motion.a>
 
           <motion.a

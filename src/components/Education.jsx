@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import TechPill from './TechPill';
 import { fadeUp, viewportOnce } from '../animations/variants';
 
-const ACHIEVEMENTS = ['Top Ranked NIT', 'Information Technology', 'Graduated 2021'];
+const ACHIEVEMENTS = ['Top Ranked NIT', 'Information Technology'];
 
 export default function Education() {
   return (
@@ -28,15 +28,10 @@ export default function Education() {
             Motilal Nehru National Institute of Technology Allahabad
           </p>
 
-          <p className="mt-3 inline-flex items-center gap-1.5 text-sm text-text-muted">
-            <Calendar className="h-4 w-4" aria-hidden="true" />
-            2017 to 2021
-          </p>
-
           <hr className="my-6 border-default" />
 
           <p className="text-text-secondary">
-            Premier National Institute of Technology, India — consistently ranked among the top
+            Premier National Institute of Technology, India, consistently ranked among the top
             engineering institutions in the country. Specialised in data structures, distributed
             systems, algorithms, database systems, and software engineering.
           </p>

@@ -32,8 +32,8 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const goToExperience = () => {
-    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+  const goToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -85,7 +85,7 @@ export default function Hero() {
           <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-4">
             <button
               type="button"
-              onClick={goToExperience}
+              onClick={goToAbout}
               className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-btn bg-accent px-6 py-3 text-base font-semibold text-bg-primary transition-all duration-300 ease-smooth hover:shadow-glow-strong hover:brightness-110"
             >
               View My Work
@@ -154,7 +154,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.button
         type="button"
-        onClick={goToExperience}
+        onClick={goToAbout}
         aria-label="Scroll to content"
         initial={{ opacity: 1 }}
         animate={{ opacity: showScrollHint ? 1 : 0 }}

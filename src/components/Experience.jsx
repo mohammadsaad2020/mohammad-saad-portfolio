@@ -56,7 +56,7 @@ function ExperienceCard({ role, isLeft, isDesktop }) {
         {/* Highlights — tap a pill to filter the bullets below */}
         <div className="mt-5">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.08em] text-text-muted">
-            Tech &amp; highlights — tap to see exactly where I used it
+            Tech &amp; highlights, tap to see exactly where I used it
           </p>
           <div className="flex flex-wrap gap-2">
             {role.stack.map((tech) => (

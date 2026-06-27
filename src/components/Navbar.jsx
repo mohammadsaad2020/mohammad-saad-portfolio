@@ -62,7 +62,7 @@ export default function Navbar() {
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="font-display text-lg font-medium tracking-tight text-text-primary"
-            aria-label="Mohammad Saad — back to top"
+            aria-label="Mohammad Saad, back to top"
           >
             <span className="text-accent">M</span>ohammad <span className="text-accent">S</span>aad
           </button>

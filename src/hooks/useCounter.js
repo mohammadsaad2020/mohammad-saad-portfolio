@@ -37,7 +37,10 @@ export default function useCounter(target, active, duration = 2000) {
     };
 
     frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
+    return () => {
+      cancelAnimationFrame(frame);
+      startedRef.current = false;
+    };
   }, [active, target, duration]);
 
   return value;
