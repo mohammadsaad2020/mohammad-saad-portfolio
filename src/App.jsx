@@ -26,10 +26,10 @@ export default function App() {
         <Hero />
         <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
           <About />
+          <Metrics />
           <Experience />
           <Skills />
           <Projects />
-          <Metrics />
           <Certifications />
           <Education />
           <Contact />
