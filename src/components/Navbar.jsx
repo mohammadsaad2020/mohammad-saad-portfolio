@@ -91,14 +91,14 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          {/* Logo */}
+          {/* Connect button */}
           <button
             type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-display text-lg font-medium tracking-tight text-text-primary"
-            aria-label="Mohammad Saad, back to top"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="inline-flex items-center gap-2 rounded-btn border border-accent bg-transparent px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 ease-smooth hover:bg-[var(--accent-glow)] hover:shadow-glow"
+            aria-label="Go to contact section"
           >
-            <span className="text-accent">M</span>ohammad <span className="text-accent">S</span>aad
+            Connect Me
           </button>
 
           {/* Desktop links */}

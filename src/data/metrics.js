@@ -55,7 +55,7 @@ export const metrics = [
 
 // The three hero summary cards (a focused subset of the metrics above).
 export const heroMetrics = [
-  { id: 'h-years', displayText: 'Almost 5', label: 'Years of Data Engineering Experience' },
+  { id: 'h-years', displayText: '~5', label: 'Years of Data Engineering Experience' },
   { id: 'h-consistency', value: 99.9, decimals: 1, suffix: 'percent', label: 'Data Consistency Delivered at PwC' },
   { id: 'h-processing', value: 40, decimals: 0, suffix: 'percent', label: 'Faster Processing Time Achieved' },
 ];
