@@ -98,7 +98,7 @@ export default function Navbar() {
             className="inline-flex items-center gap-2 rounded-btn border border-accent bg-transparent px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 ease-smooth hover:bg-[var(--accent-glow)] hover:shadow-glow"
             aria-label="Go to contact section"
           >
-            Connect Me
+            Get In Touch
           </button>
 
           {/* Desktop links */}
