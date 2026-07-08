@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import { Download, ArrowRight, ChevronDown } from 'lucide-react';
+import { Download, ArrowRight, ChevronDown, Mail, Phone, Linkedin } from 'lucide-react';
 import { heroContainer, heroItem } from '../animations/variants';
 import { heroMetrics } from '../data/metrics';
 import CounterNumber from './CounterNumber';
@@ -121,16 +121,54 @@ export default function Hero() {
                 className="rounded-card border-t-2 border-accent bg-bg-card/60 p-4 shadow-card backdrop-blur-sm"
               >
                 <div className="font-display text-3xl font-bold text-accent">
-                  <CounterNumber
-                    value={metric.value}
-                    decimals={metric.decimals}
-                    suffix={metric.suffix}
-                    startImmediately
-                  />
+                  {metric.displayText ?? (
+                    <CounterNumber
+                      value={metric.value}
+                      decimals={metric.decimals}
+                      suffix={metric.suffix}
+                      startImmediately
+                    />
+                  )}
                 </div>
                 <p className="mt-1 text-sm text-text-secondary">{metric.label}</p>
               </div>
             ))}
+          </motion.div>
+
+          {/* Contact boxes */}
+          <motion.div variants={heroItem} className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <a
+              href="tel:+971552160874"
+              className="flex items-center gap-3 rounded-card border-t-2 border-accent bg-bg-card/60 p-4 shadow-card backdrop-blur-sm transition-colors duration-300 hover:bg-bg-card"
+            >
+              <Phone className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-text-primary">+971 55 216 0874</p>
+                <p className="text-xs text-text-secondary">Phone</p>
+              </div>
+            </a>
+            <a
+              href="mailto:mohammadsaadwork@gmail.com"
+              className="flex items-center gap-3 rounded-card border-t-2 border-accent bg-bg-card/60 p-4 shadow-card backdrop-blur-sm transition-colors duration-300 hover:bg-bg-card"
+            >
+              <Mail className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-text-primary">mohammadsaadwork@gmail.com</p>
+                <p className="text-xs text-text-secondary">Email</p>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mohammadsaad-"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-card border-t-2 border-accent bg-bg-card/60 p-4 shadow-card backdrop-blur-sm transition-colors duration-300 hover:bg-bg-card"
+            >
+              <Linkedin className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-text-primary">LinkedIn Profile</p>
+                <p className="text-xs text-text-secondary">Connect with me</p>
+              </div>
+            </a>
           </motion.div>
         </motion.div>
 
