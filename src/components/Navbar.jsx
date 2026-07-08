@@ -84,7 +84,7 @@ export default function Navbar() {
 
       <nav
         aria-label="Primary"
-        className={`transition-all duration-300 ease-smooth ${
+        className={`relative z-50 transition-all duration-300 ease-smooth ${
           scrolled
             ? 'bg-[rgba(10,15,30,0.85)] backdrop-blur-xl border-b border-default'
             : 'bg-transparent'
@@ -134,7 +134,7 @@ export default function Navbar() {
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="relative flex h-11 w-11 items-center justify-center md:hidden"
+            className="relative mr-2 flex h-11 w-11 items-center justify-center md:hidden"
           >
             <span className="sr-only">Toggle navigation menu</span>
             <div className="relative h-4 w-6">
