@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import useActiveSection from '../hooks/useActiveSection';
 
@@ -17,6 +17,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const activeSection = useActiveSection(NAV_IDS);
   const { scrollYProgress } = useScroll();
+  // Prevents the popstate listener from double-closing when we call history.back() ourselves.
+  const handlingClose = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -33,10 +35,42 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  const goToSection = (id) => {
+  // Push a fake history entry when the menu opens so the phone's back button
+  // dismisses the overlay instead of leaving the page.
+  useEffect(() => {
+    if (menuOpen) {
+      window.history.pushState({ menuOpen: true }, '');
+    }
+  }, [menuOpen]);
+
+  // When the user presses the phone back button, close the menu.
+  useEffect(() => {
+    const onPopState = () => {
+      if (handlingClose.current) return;
+      setMenuOpen(false);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const closeMenu = () => {
+    if (handlingClose.current) return;
+    handlingClose.current = true;
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    // Pop the fake history entry we pushed when the menu opened.
+    if (window.history.state?.menuOpen) {
+      window.history.back();
+    }
+    // Reset after a short delay to allow popstate to fire and be ignored.
+    setTimeout(() => { handlingClose.current = false; }, 100);
+  };
+
+  const goToSection = (id) => {
+    closeMenu();
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
   };
 
   return (
@@ -93,10 +127,10 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger / X toggle */}
           <button
             type="button"
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
